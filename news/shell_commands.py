@@ -116,7 +116,7 @@ print(
 )
 
 # 11. Вывести все комментарии (дата, пользователь, рейтинг, текст) к этой статье.
-for c in Comment.objects.all():
+for c in Comment.objects.filter(post=top_article):
     print(
         c.created.strftime("%m.%d.%Y - %H:%M"),
         c.user.username,
